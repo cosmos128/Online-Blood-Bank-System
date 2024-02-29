@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+    padding-bottom: 50px;
+    
+}
+
+.form-box {
+    
+    border: 1px solid black;
+    
+    border-radius: 25px;
+    width: 1097px;
+    height: 500px;
+    margin: 87px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 10px #888888;
+    background: linear-gradient(rgba(250,235,215), rgba(253, 253, 253, 0.7)), url(blood.png);
+    background-repeat: no-repeat;
+
+}
+
+.input-box {
+    padding-left: 2px;
+    display: inline;
+    height: fit-content;
+    
+    width: 78%;
+    
+    border: 1px solid black;
+
+}
+
+.input-box p {
+    padding-bottom: 42px;
+    display: flex;
+    font-size: 35px;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.first-row {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 40px;
+
+
+
+}
+
+.second-row {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.input-box .form-group {
+    display: inline;
+    width: 20%;
+
+
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.field {
+    background-color:white;
+    height: 37px;
+    border: none;
+
+}
+
+.form-group,
+.gender,
+select {
+
+    width: 117%;
+}
+
+.navbar {
+    padding-bottom: 9px;
+}
+
+.container {
+    padding-left: 86px;
+    cursor: pointer;
+    display: block;
+}
+
+.submit-button {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.submit {
+
+    font-size: 15px;
+    border-style: none;
+    color: white;
+    background-color: #B12A21;
+    font-weight: bold;
+    border-radius: 35px;
+    cursor: pointer;
+    width: 162px;
+    height: 40px;
+}
