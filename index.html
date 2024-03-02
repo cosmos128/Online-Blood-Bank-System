@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+
+    <section class="photo">
+        <div class="image"><img src="./logo-2.png"></div>
+    </section>
+
+        <ul id="navbar">
+            <li><a class="active" href="index.html">Home</a></li>
+            <li><a href="">Become a Donor</a></li>
+            <li><a href="">Need Blood</a></li>
+            <li><a href="">About Us</a></li>
+        </ul>
+        <div class="update-container">
+            <div class="title">Updates</div>
+            <ul>
+                <li>The demand for blood has increased in Kathmandu Valley over the last several years</li>
+                <li>
+                    The Central Blood Transfusion Service of Nepal Red Cross Society collected 242,048 units
+                    and provided patients with 331,456 units of blood and blood components last fiscal.
+                </li>
+                <li>
+                    youths donating blood at a blood donation
+                    camp organised on the occasion of international youth day in lalitpur, on thursday
+                </li>
+            </ul>
+        </div>
+
+        <div class="full">
+            <div class="form">
+                <div class="contactus">
+                    <p>CONTACT US</p>
+                </div>
+                <br>
+                <br>
+                <br>
+                
+                <form id="contact_us_form" action="./form_submit.php" method="POST" onsubmit="return validate();">
+                    <label for="Name" class="Name">Name</label><br><br>
+                    <input type="text" id="Name" name="Name" class="inside" style="height: 40px; width:300px; padding-left: 14px;  " placeholder="Your Name" required><br><br>
+                    <label for="email" class="email">Email</label><br><br>
+                    <input type="email" id="email" style="height: 40px; width:300px; padding-left: 14px;" name="email" class="inside" placeholder="Your Email" ><br><br>
+                    <label for="textarea" class="message">Message</label><br><br>
+                    <textarea id="message" name="message" cols="28" rows="6" class="inside" placeholder="Leave your message Here" style="padding-left: 14px; padding-top:8px" required ></textarea><br>
+                    <button type="submit" id="submit" class="submit">Submit</button>
+
+
+                </form>
+
+            </div>
+            <img src="./contactus.png" class="image_contactus" style="width: 800px; height:500px; padding-top:200px";">
+        </div>
+
+        <script>
+
+            function validate(){
+
+                var name = document.getElementById("Name").value;
+                var email = document.getElementById("email").value;
+                var email_pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+                if ( !email_pattern.test(email)) {
+                    alert('Please enter a valid email address.');
+                    return false;
+                }
+
+                alert('Form submitted successfully!\nName: ' + name + '\nEmail: ' + email);
+                return true;
+            }
+
+        </script>
+
+</body>
+
+</html>
