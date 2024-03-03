@@ -1,28 +1,11 @@
 <?php
 
-<<<<<<< HEAD
-$SERVER = "localhost";
-$USERNAME = "root";
-$PASSWORD = "";
-$DB_NAME = "blood_donation";
-
-$conn = mysqli_connect($SERVER,$USERNAME,$PASSWORD,$DB_NAME);
-
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-echo "Connected successfully";
-
-    
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-=======
 function test_input($data) {
     $data = trim($data);
     $data = stripslashes($data);
     $data = htmlspecialchars($data);
     return $data;
 }
->>>>>>> aa3d490245c322eafceb0cb2f306d6f2a58d3b6c
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $server = "localhost";
@@ -42,17 +25,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo("error");
         die("Error: Invalid email format");
 
-<<<<<<< HEAD
-    // If everything is valid, you can proceed with further processing or store the data
-    // For example, you might want to send an email, save to a database, etc.
-    $sql = "INSERT INTO contact_query (Name,Email,Message) VALUES('$name','$email','$message')";
-
-    if ($conn->query($sql)) {
-        echo "Record added successfully";
-    } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
-=======
->>>>>>> aa3d490245c322eafceb0cb2f306d6f2a58d3b6c
     }
 
     try {
