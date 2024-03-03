@@ -7,16 +7,18 @@ $DB_NAME = "blood_donation";
 
 $conn = mysqli_connect($SERVER,$USERNAME,$PASSWORD,$DB_NAME);
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
 }
+echo "Connected successfully";
+
     
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Server-side validation
     $name = test_input($_POST["Name"]);
     $email = test_input($_POST["email"]);
-    $message = test_input($_POST['message'])
+    $message = test_input($_POST['message']);
 
 
     // Check if name is not empty
@@ -31,9 +33,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // If everything is valid, you can proceed with further processing or store the data
     // For example, you might want to send an email, save to a database, etc.
-    $sql = "INSERT INTO contact_query (Name,Email,Message) VALUES('$name','$email','$message')"
+    $sql = "INSERT INTO contact_query (Name,Email,Message) VALUES('$name','$email','$message')";
 
-    if ($conn->query($sql) === TRUE) {
+    if ($conn->query($sql)) {
         echo "Record added successfully";
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
