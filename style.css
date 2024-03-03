@@ -1,0 +1,189 @@
+* {
+    font-family: "Poppins", sans-serif;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+#navbar {
+   
+    overflow: hidden;
+    padding: 15px;
+    text-align: center;
+}
+
+#navbar li {
+    display: inline-block;
+    margin: 0 20px;
+}
+
+.image {
+    float: left;
+}
+
+.image img {
+    max-height: 50px; /* Adjust the height as needed */
+    padding: 10px 20px;
+}
+
+
+#navbar li a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #000000;
+}
+
+
+#navbar a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+#navbar a:hover::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 50%;
+    height: 1px;
+    background-color: red;
+  
+}
+.update-container {
+    background-color: blanchedalmond;
+    position: fixed;
+    top: 90px;
+    left: 0;
+    right: 0;
+    box-shadow: 0 4px 8px -4px rgba(0, 0, 0, 0.3);
+}
+
+.update-container .title {
+    position: absolute;
+    background-color: #B12A21;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    color: white;
+    font-weight: 500;
+    z-index: 200;
+}
+
+.update-container ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    transform: translateX(-1709px);
+    animation: scroll 22s infinite linear;
+}
+
+.update-container ul li {
+    white-space: nowrap;
+    padding: 10px 24px;
+    color: #000000;
+    position: relative;
+}
+
+.update-container ul li::after {
+    content: "";
+    width: 2px;
+    height: 100%;
+    background: #B12A21;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+}
+
+.update-container ul li:last-child::after {
+    display: none;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(-1709px);
+    }
+}
+.RedText {
+    color: brown;
+}
+
+.greenText {
+    color: green;
+}
+
+.whole {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+}
+
+.rightside {
+    width: 620px;
+    margin: 10px;
+    display: flex;
+    height: 564px;
+    padding-top: 3px;
+
+
+}
+
+.leftside {
+    line-height: 1.2;
+    letter-spacing: 2px;
+    text-align: left;
+    font-weight: bold;
+    font-size: 36px;
+    width: 499px;
+    padding-top: 7%;
+    padding-left: 40%;
+
+
+}
+
+.leftside .h1 {
+    display: flex;
+    font-size: larger;
+    padding-bottom: 20px;
+}
+
+.buttonclick {
+    padding-left: 85px;
+}
+
+.buttonclick button {
+    font-size: 18px;
+    border-style: none;
+    color: white;
+    background-color: #B12A21;
+    font-weight: bold;
+    border-radius: 35px;
+    cursor: pointer;
+    width: 202px;
+    height: 56px;
+
+
+}
+
+.leftside .lasttext {
+    padding-top: 0px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.rightside .line {
+    width: 2px;
+    padding: 0px;
+    height: 2px;
+}
