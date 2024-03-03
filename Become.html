@@ -13,7 +13,7 @@
 <body>
     <div class="navbar"></div>
 
-    <div class="form-box" >
+    <div class="form-box">
 
         <div class="input-box">
             <p>Become a Donor</p><br>
@@ -23,14 +23,17 @@
                     <div class="form-group">
                         <label for="fullName">Full Name*</label>
                         <input class="field" type="text" id="fullName" name="fullName" required>
+                        <div class="error-message" id="fullName-error"></div>
                     </div>
                     <div class="form-group">
                         <label for="mobileNumber">Mobile Number*</label>
                         <input class="field" type="tel" id="mobileNumber" name="mobileNumber" required>
+                        <div class="error-message" id="mobileNumber-error"></div>
                     </div>
                     <div class="form-group">
                         <label for="age">Age*</label>
                         <input class="field" type="number" id="age" name="age" required>
+                        <div class="error-message" id="age-error"></div>
                     </div>
 
                 </div>
@@ -42,16 +45,35 @@
                             <option value="female">Female</option>
                             <option value="other">Other</option>
                         </select>
+                        <div class="error-message" id="gender-error"></div>
                     </div>
                     <div class="form-group">
                         <label for="Email">Email*</label>
                         <input class="field" type="email" id="email" name="email" required>
+                        <div class="error-message" id="email-error"></div>
                     </div>
                     <div class="form-group">
                         <label for="Address">Address*</label>
                         <input class="field" type="Address" id="Address" name="Address" required>
-                    </div>
+                        <div class="error-message" id="address-error"></div>
+                    </div><br>
 
+                </div>
+                <div class="blood">
+                    <div class="blood-group">
+                        <label for="Blood">Blood-type*</label>
+                        <select class="field" id="Blood-type" name="Blood-type" required>
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                        </select>
+                        <div class="error-message" id="bloodType-error"></div>
+                    </div>
                 </div>
             </form>
             <div>
@@ -59,16 +81,105 @@
                     <input type="checkbox" checked="checked"> I agree to RaktaDaan's Terms and Conditions
                     <span class="checkmark"></span>
                 </label>
+                <div class="error-message" id="termsCheckbox-error"></div>
             </div>
             <div class="submit-button">
-                <input class="submit" type="submit" value="Submit">
+
+                <button class="button" type="button" onclick="validateForm()">Submit</button>
             </div>
+
 
         </div>
 
     </div>
 
     </div>
+
+    <script>
+        function validateForm() {
+            // Reset previous error messages
+            resetErrors();
+
+            // Get form inputs
+            var fullName = document.getElementById('fullName').value;
+            var mobileNumber = document.getElementById('mobileNumber').value;
+            var age = document.getElementById('age').value;
+            var gender = document.getElementById('gender').value;
+            var email = document.getElementById('email').value;
+            var address = document.getElementById('Address').value;
+            var bloodType = document.getElementById('Blood-type').value;
+            var agreeCheckbox = document.querySelector('.container input[type="checkbox"]').checked;
+
+            // Validate each input
+            if (!fullName) {
+                displayError('fullName', 'Full Name is required');
+                return;
+            }
+
+            if (!mobileNumber || !isValidPhoneNumber(mobileNumber)) {
+                displayError('mobileNumber', 'Please enter a valid Mobile Number');
+                return;
+            }
+
+            if (!age || age <= 0) {
+                displayError('age', 'Please enter a valid Age');
+                return;
+            }
+
+            if (!gender) {
+                displayError('gender', 'Please select a Gender');
+                return;
+            }
+
+            if (!email || !isValidEmail(email)) {
+                displayError('email', 'Please enter a valid Email');
+                return;
+            }
+
+            if (!address) {
+                displayError('Address', 'Address is required');
+                return;
+            }
+
+            if (!bloodType) {
+                displayError('Blood-type', 'Please select a Blood Type');
+                return;
+            }
+
+            if (!agreeCheckbox) {
+                displayError('termsCheckbox', 'You must agree to the Terms and Conditions');
+                return;
+            }
+
+            // If all validations pass, you can submit the form
+            alert('Form submitted successfully!');
+        }
+
+        function displayError(elementId, errorMessage) {
+            var errorElement = document.getElementById(elementId + '-error');
+            errorElement.innerHTML = errorMessage;
+            errorElement.style.display = 'block';
+        }
+
+        function resetErrors() {
+            var errorElements = document.getElementsByClassName('error-message');
+            for (var i = 0; i < errorElements.length; i++) {
+                errorElements[i].style.display = 'none';
+            }
+        }
+
+        function isValidPhoneNumber(number) {
+            // Phone number pattern: 10 digits
+            var phoneNumberPattern = /^\d{10}$/;
+            return phoneNumberPattern.test(number);
+        }
+
+
+        function isValidEmail(email) {
+            
+            return /\S+@\S+\.\S+/.test(email);
+        }
+    </script>
 
 
 </body>

@@ -6,22 +6,19 @@
 
 body {
     padding-bottom: 50px;
-    
+
 }
 
 .form-box {
-    
-    border: 1px solid black;
-    
     border-radius: 25px;
     width: 1097px;
-    height: 500px;
+    height: 530px;
     margin: 87px;
     display: flex;
     justify-content: center;
     align-items: center;
     box-shadow: 5px 10px #888888;
-    background: linear-gradient(rgba(250,235,215), rgba(253, 253, 253, 0.7)), url(blood.png);
+    background: linear-gradient(rgba(250, 235, 215), rgba(253, 253, 253, 0.7)), url(blood.png);
     background-repeat: no-repeat;
 
 }
@@ -30,10 +27,7 @@ body {
     padding-left: 2px;
     display: inline;
     height: fit-content;
-    
     width: 78%;
-    
-    border: 1px solid black;
 
 }
 
@@ -49,33 +43,54 @@ body {
 
 .first-row {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-bottom: 40px;
 
-
+    gap: 20px;
 
 }
 
+.second-row .form-group {
+    padding-left: 10px;
+}
+
 .second-row {
+
+    gap: 20px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-bottom: 20px;
+}
+
+.blood {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
 }
 
 .input-box .form-group {
     display: inline;
     width: 20%;
-
-
     margin-bottom: 20px;
     box-sizing: border-box;
 }
 
 .field {
-    background-color:white;
+    background-color: white;
     height: 37px;
     border: none;
 
+}
+
+
+
+.blood-group .field {
+    justify-content: flex-start;
+    display: inline;
+    width: 100%;
+    margin-bottom: 20px;
+    box-sizing: border-box;
 }
 
 .form-group,
@@ -101,7 +116,7 @@ select {
     padding-top: 50px;
 }
 
-.submit {
+.button {
 
     font-size: 15px;
     border-style: none;
