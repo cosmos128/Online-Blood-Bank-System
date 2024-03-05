@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Become a Donor</title>
-    <link rel="stylesheet" href="donor.css">
-
+    <link rel="stylesheet" href="BAD.css">
 
 </head>
 
@@ -19,25 +18,19 @@
             <p>Become a Donor</p><br>
             <form action="#" method="post">
 
-                <div class="first-row">
+                <div class="row-1">
                     <div class="form-group">
-                        <label for="fullName">Full Name*</label>
+                        <label for="First name">First Name*</label>
                         <input class="field" type="text" id="fullName" name="fullName" required>
-                        <div class="error-message" id="fullName-error"></div>
+                        <div class="error-message" id="firstName-error"></div>
                     </div>
                     <div class="form-group">
-                        <label for="mobileNumber">Mobile Number*</label>
-                        <input class="field" type="tel" id="mobileNumber" name="mobileNumber" required>
-                        <div class="error-message" id="mobileNumber-error"></div>
+                        <label for="Last Name">Last Name*</label>
+                        <input class="field" type="text" id="latName" name="lastName" required>
+                        <div class="error-message" id="lastName-error"></div>
                     </div>
-                    <div class="form-group">
-                        <label for="age">Age*</label>
-                        <input class="field" type="number" id="age" name="age" required>
-                        <div class="error-message" id="age-error"></div>
-                    </div>
-
                 </div>
-                <div class="second-row">
+                <div class="row-2">
                     <div class="form-group">
                         <label for="gender">Gender*</label>
                         <select class="field" id="gender" name="gender" required>
@@ -52,28 +45,44 @@
                         <input class="field" type="email" id="email" name="email" required>
                         <div class="error-message" id="email-error"></div>
                     </div>
+                </div>
+                <div class="row-3">
+                    <div class="form-group">
+                        <label for="mobileNumber">Mobile Number*</label>
+                        <input class="field" type="tel" id="mobileNumber" name="mobileNumber" required>
+                        <div class="error-message" id="mobileNumber-error"></div>
+                    </div>
                     <div class="form-group">
                         <label for="Address">Address*</label>
                         <input class="field" type="Address" id="Address" name="Address" required>
                         <div class="error-message" id="address-error"></div>
-                    </div><br>
+                    </div>
 
                 </div>
-                <div class="blood">
-                    <div class="blood-group">
-                        <label for="Blood">Blood-type*</label>
-                        <select class="field" id="Blood-type" name="Blood-type" required>
-                            <option value="A+">A+</option>
-                            <option value="A-">A-</option>
-                            <option value="B+">B+</option>
-                            <option value="B-">B-</option>
-                            <option value="AB+">AB+</option>
-                            <option value="AB-">AB-</option>
-                            <option value="O+">O+</option>
-                            <option value="O-">O-</option>
-                        </select>
-                        <div class="error-message" id="bloodType-error"></div>
+                <div class="row-4">
+                    <div class="blood">
+                        
+                            <label for="Blood">Blood-type*</label>
+                            <select class="field" id="Blood-type" name="Blood-type"  aria-placeholder="Select blood group*" required>
+
+                                <option value="A+">A+</option>
+                                <option value="A-">A-</option>
+                                <option value="B+">B+</option>
+                                <option value="B-">B-</option>
+                                <option value="AB+">AB+</option>
+                                <option value="AB-">AB-</option>
+                                <option value="O+">O+</option>
+                                <option value="O-">O-</option>
+                            </select>
+                            <div class="error-message" id="bloodType-error"></div>
+                        
                     </div>
+                    <div class="form-group">
+                        <label for="age">Age*</label>
+                        <input class="field" type="number" id="age" name="age" required>
+                        <div class="error-message" id="age-error"></div>
+                    </div>
+
                 </div>
             </form>
             <div>
@@ -82,14 +91,17 @@
                     <span class="checkmark"></span>
                 </label>
                 <div class="error-message" id="termsCheckbox-error"></div>
-            </div>
+            
             <div class="submit-button">
-
+    
                 <button class="button" type="button" onclick="validateForm()">Submit</button>
             </div>
-
-
         </div>
+
+       
+    </div>
+
+    </div>
 
     </div>
 
@@ -111,8 +123,12 @@
             var agreeCheckbox = document.querySelector('.container input[type="checkbox"]').checked;
 
             // Validate each input
-            if (!fullName) {
-                displayError('fullName', 'Full Name is required');
+            if (!firstName) {
+                displayError('firstName', 'First Name is required');
+                return;
+            }
+            if (!lastName) {
+                displayError('lastName', 'last Name is required');
                 return;
             }
 
@@ -174,13 +190,11 @@
             return phoneNumberPattern.test(number);
         }
 
-
         function isValidEmail(email) {
-            
+
             return /\S+@\S+\.\S+/.test(email);
         }
     </script>
-
 
 </body>
 
