@@ -1,0 +1,27 @@
+*{
+    /* background-image: linear-gradient(to top,#331111,#981919); */
+    font-family: "Poppins", sans-serif;
+}
+#grad{
+    background-image: linear-gradient(to top,#331111,#981919);
+}
+.title{
+    color: white;
+    text-align: center;
+}
+img{
+    width: 81%;
+    border-radius: 45px;
+    
+}
+.first-row{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 50px;
+}
+.second-row{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
