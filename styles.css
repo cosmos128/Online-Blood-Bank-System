@@ -1,5 +1,4 @@
 *{
-    /* background-image: linear-gradient(to top,#331111,#981919); */
     font-family: "Poppins", sans-serif;
 }
 #grad{
@@ -12,7 +11,13 @@
 img{
     width: 81%;
     border-radius: 45px;
-    
+    transition: 1s;
+    box-shadow: 4px 2px 5px 1px cornsilk;
+}
+img:hover{
+    transform: scale(1.3);
+    z-index: 2;
+    box-shadow: 4px 2px 5px 5px cornsilk;
 }
 .first-row{
     display: flex;
