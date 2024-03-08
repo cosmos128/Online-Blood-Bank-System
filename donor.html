@@ -85,24 +85,25 @@
                     </div>
 
                 </div>
-            </form>
-            <div>
-                <label class="container">
-                    <input type="checkbox" checked="checked"> I agree to RaktaDaan's Terms and Conditions
-                    <span class="checkmark"></span>
-                </label>
-                <div class="error-message" id="termsCheckbox-error"></div>
 
-                <div class="submit">
-                    <button onclick="if(validateForm(true)) submited();
+                <div>
+                    <label class="container">
+                        <input type="checkbox" checked="checked"> I agree to RaktaDaan's Terms and Conditions
+                        <span class="checkmark"></span>
+                    </label>
+                    <div class="error-message" id="termsCheckbox-error"></div>
+
+                    <div class="submit">
+                        <button onclick="if(validateForm(true)) submited();
                  
               " class="js-submit-button submit-button">
-                        Submit
-                    </button>
-                </div>
-            </div>
-
+                            Submit
+                        </button>
+                    </div>
+            </form>
         </div>
+
+    </div>
 
     </div>
 
@@ -118,12 +119,12 @@
             if (buttonElement.innerText === 'Submit') {
                 buttonElement.innerHTML = 'Submited';
                 buttonElement.classList.add('is-submited');
-            } 
+            }
         }
         function validateForm() {
             // Reset previous error messages
             resetErrors();
-           
+
 
             // Get form inputs
             var firstName = document.getElementById('firstName').value;
@@ -209,7 +210,7 @@
 
             return /\S+@\S+\.\S+/.test(email);
         }
-       
+
     </script>
 
 </body>
