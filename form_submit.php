@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         // Prepare and execute the SQL query
-        $stmt = $pdo->prepare("INSERT INTO contact_query (Name, Email, Message) VALUES (:name, :email, :message)");
+        $stmt = $pdo->prepare("INSERT INTO contact_query (query_Name, query_Email, query_Message) VALUES (:name, :email, :message)");
         $stmt->bindParam(':name', $name);
         $stmt->bindParam(':email', $email);
         $stmt->bindParam(':message', $message);
