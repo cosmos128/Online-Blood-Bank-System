@@ -126,14 +126,13 @@ select {
     justify-items: center;
 }
 
-.submit-button {
+.submit{
     display: flex;
     justify-content: center;
     padding-top: 50px;
+
 }
-
-.button {
-
+.submit-button{
     font-size: 15px;
     border-style: none;
     color: white;
@@ -143,4 +142,11 @@ select {
     cursor: pointer;
     width: 162px;
     height: 40px;
+
 }
+
+
+  .is-submited {
+    background-color:  #B12A21;
+    color: rgb(255, 255, 255);
+  }
