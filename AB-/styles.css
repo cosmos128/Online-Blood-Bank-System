@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+nav h2{
+    text-align: center;
+    background-color: black;
+    color: white;
+    font-size: 40px;
+}
+
+.main-container{
+    margin: 25px 25px 10px 10px;
+    background: linear-gradient(243.18deg, #D81E1E 0%, #7B2323 100%);
+    color: white;
+    padding: 20px;
+}
+
+
+.heading{
+    text-align: center;
+    font-size: 32px;
+}
+
+.p1,.p2,.p3,.p4{
+    margin: 0 0 0 30px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 60px;
+    align-items: center;
+}
+
+.secondary-table{
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    margin: 40px 0 0 0;
+}
+.col1,.col2{
+    padding: 15px 0 0 0;
+    font: 500;
+    color: white;
+    border-radius: 10px;
+    width: 200px;
+    height: 50px;
+    background: linear-gradient(243.18deg, #D81E1E 0%, #7B2323 100%);
+}
+.circleimg{
+    margin: 20px 0 0 310px;
+    width: 900px;   
+}
+.criteria{
+    height: 500px;
+}
+.criteria h3{
+    margin-top: 20px;
+    text-align: center;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 96px;
+    color: #584E4E;
+}
+
+.options{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.row1,.row2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.firstoption,.secondoption,.thirdoption,.fourthoption{
+    margin: 20px;
+    background: linear-gradient(243.18deg, #D81E1E 0%, #7B2323 100%);
+    padding: 10px;
+    color: white;
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    text-align: center;
+    padding-top: 15px
+    font: 500;
+}
