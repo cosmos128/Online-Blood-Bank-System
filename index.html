@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="form.js"></script>
+  </head>
+  <body>
+    <div class="main-div">
+      <form action="./" class="form" onsubmit="validateForm(); return false;">
+        <div class="heading">Need Blood</div>
+        <div class="form-item">
+          <label for="fullName" class="form-label"
+            >Full Name <span style="color: red">*</span>
+            
+          </label>
+          <input
+            type="text"
+            class="form-input"
+            name="fullName"
+            id="fullName"
+            placeholder="Enter your Name"
+            required
+          />
+          <span id="fullNameError" class="error"></span><br>
+        </div>
+
+        <div class="form-item">
+          <label for="mobileNumber" class="form-label"
+            >Mobile Number <span style="color: red">*</span></label
+          >
+          <input
+            type="tel"
+            class="form-input"
+            name="mobileNumber"
+            id="mobileNumber"
+            placeholder="Enter your number"
+            pattern="[0-9]{10}"
+            required
+          />
+          <span id="mobileNumberError" class="error"></span><br>
+        </div>
+
+        <div class="form-item">
+          <label for="age" class="form-label"
+            >Age <span style="color: red">*</span></label
+          >
+          <input
+            type="number"
+            class="form-input"
+            name="age"
+            id="age"
+            min="1"
+            max="100"
+            placeholder="Enter your age"
+          />
+          <span id="ageError" class="error"></span><br>
+        </div>
+        <div class="form-item">
+          <label for="address" class="form-label"
+            >Address <span style="color: red">*</span></label
+          >
+          <input
+            type="text"
+            class="form-input"
+            name="address"
+            id="address"
+            placeholder="Enter your Address"
+          />
+          <span id="addressError" class="error"></span><br>
+        </div>
+        <div class="file-input-container">
+          <label for="#" class="form-label form-long"
+            >Blood Requisition Form <span style="color: red">*</span></label
+          >
+          <label for="file" class="form-label-file" id="file"
+            >Choose File</label
+          >
+          <button class="file-input-button">Browse</button>
+          <input
+            type="file"
+            class="file-input"
+            id="customFileInput"
+            onchange="displayFileName()"
+            accept="image/*"
+            required
+          />
+          <span id="imageError" class="error"></span><br>
+          <div class="file-name" id="fileName"></div>
+        </div>
+        <div class="dropdown-container">
+          <div>
+            <label for="bloodGroup" class="bloodGroup">Blood Group:</label>
+            <select id="bloodType" name="bloodType" required>
+              <option value="bloodGroup">Blood Group</option>
+              <option value="A+">A+</option>
+              <option value="B+">B+</option>
+              <option value="AB+">AB+</option>
+              <option value="O+">O+</option>
+              <option value="A-">A-</option>
+              <option value="B-">B-</option>
+              <option value="AB-">AB-</option>
+              <option value="O-">O-</option>
+            </select>
+            <span id="bloodTypeError" class="error"></span><br>
+          </div>
+          <div>
+            <label for="gender" class="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+              <option value="gender">Gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+        </div>
+        <p>
+          Note: Every section of form must be filled in order to provide precise
+          and accuracy in blood donation program.
+        </p>
+        <button class="file-input-button submit" value="submit">Submit</button>
+        <img
+          src="/raktadaan logo final@1024x-8.png"
+          class="raktalogo"
+          alt="logo"
+        />
+      </form>
+    </div>
+  </body>
+</html>
