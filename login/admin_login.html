@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="admin_login.css">
+</head>
+
+<body>
+
+    <div class="maincontainer">
+        <div class="logo">
+            <img src="image.png" height="150px" width="200px">
+        </div>
+        <div class="form">
+            <h1>Admin Login Portal</h1>
+            <form id="myForm">
+               <span> <label for="username">Username</label></span><br>
+                <span><input type="text" id="username" name="username" placeholder="Enter username"></span><br>
+                <span id="usernameError" class="error"></span><br>
+            
+                <span><label for="password">Password</label></span><br>
+                <input type="password" id="password" name="password" placeholder="Enter password"><br>
+                <span id="passwordError" class="error"></span><br>
+            
+                <input type="submit" value="Submit" id="submitButton">
+        </div>
+
+
+        <script>
+            document.getElementById("myForm").addEventListener("submit", function(event) {
+                event.preventDefault(); // Prevents the default form submission behavior
+            
+                // Call your validation function here
+                validateForm();
+            });
+            function validateForm() {
+                var username = document.getElementById("username").value;
+                var password = document.getElementById("password").value;
+                var usernameError = document.getElementById("usernameError");
+                var passwordError = document.getElementById("passwordError");
+                var isValid = true;
+
+                // Reset error messages
+                usernameError.innerHTML = "";
+                passwordError.innerHTML = "";
+
+                // Regular expressions for validation
+                var usernameRegex = /^[a-zA-Z0-9_-]{3,16}$/; // Alphanumeric, underscores, and hyphens allowed, 3-16 characters
+                var passwordRegex = /^.{6,}$/; // Minimum 6 characters
+
+                // Validation for username
+                if (!usernameRegex.test(username)) {
+                    usernameError.innerHTML = "Username must be alphanumeric and 3-16 characters long";
+                    isValid = false;
+                }
+
+                // Validation for password
+                if (!passwordRegex.test(password)) {
+                    passwordError.innerHTML = "Password must be at least 6 characters long";
+                    isValid = false;
+                }
+
+                return isValid;
+            }
+        </script>
+
+
+
+
+
+</body>
+
+</html>
