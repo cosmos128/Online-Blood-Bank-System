@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins';
+}
+
+.left{
+    width: 40%;
+    height: 703px;
+    background-color: #981919;
+    float: left;
+}
+
+.leftImage{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 150px;  
+}
+
+.leftImage img{
+    width: 200px;
+    height: 200px;
+    
+}
+
+
+.text1{
+    font-size: 17px;
+    font-weight: bold;
+    color: #FFFFFF;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.text2{
+    font-size: 17px;
+    font-weight: bold;
+    color: #FFFFFF;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    margin-left: 160px ;
+
+
+}
+
+.right{
+    height: 703px;
+    width: 100%;
+}
+
+.logo{
+    display: flex;
+    padding-left: 50px;
+    padding-top: 30px;
+}
+
+.rightText{
+    padding-left: 800px;
+    margin: 20px;
+    font-size: 27px;
+}
+
+.form{
+    padding-left: 820px;
+}
+
+label::after {
+    content: '*'; /* Add asterisk symbol after the label text */
+    color: red; /* Change color of the asterisk to red */
+    margin-left: 3px; /* Add some space between the label text and the asterisk */
+}
+
+label{
+    font-size: 20px;
+    
+}
+
+input{
+    background-color: #f5f8f9;
+    width: 55%;
+    padding: 10px; 
+    margin-bottom: 20px;
+    border-radius: 6px;
+    border: 1px solid #999;
+}
+
+label[for="describe"]{
+    font-size: 30px;
+}
+
+textarea[name="describe"] {
+    background-color: #f5f5f5;
+    width: 57%;
+    height: 100px;
+    padding: 5px; 
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #999;
+    resize: none;
+}
+
+
+button[type="submit"] {
+    
+    margin-left: 150px;
+    padding: 10px 50px; 
+    border: none; 
+    border-radius: 30px; 
+    background-color: #B12A21; 
+    color: #fff; 
+    font-size: 16px; 
+    cursor: pointer; 
+    
+}
