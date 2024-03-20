@@ -10,37 +10,46 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="admin_signup.css">
+   
 </head>
 
 <body>
-
     <div class="maincontainer">
-        <div class="logo">
-            <img src="image.png" height="150px" width="200px">
+        <div class="leftcontainer">
+            <img src="../assets/images/backgn.png" >
         </div>
-        <div class="form">
-            <h1>Admin Signup Portal</h1>
-            <form id="signupForm">
-                <div class="form-group">
-                    <label for="username">Username:</label>
-                    <input type="text" id="username" name="username" placeholder="Enetr your username">
-                    <span class="error" id="usernameError"></span>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" placeholder="Enter your E=mail">
-                    <span class="error" id="emailError"></span>
-                </div>
-                <div class="form-group">
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" placeholder="Enter your Password">
-                    <span class="error" id="passwordError"></span>
-                </div>
-                <button type="button" id="signupButton">Sign Up</button>
-            </form>
-            <script src="script.js"></script>
+        <div class="rightcontainer">
+            <div class="logo">
+                <img src="/assets/images/logo.png">
+            </div>
+            <div class="form">
+                <h1>Admin Signup Portal</h1>
+                <form id="signupForm">
+                    <div class="form-group">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" placeholder="Enter your username">
+                        <span class="error" id="usernameError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your E-mail">
+                        <span class="error" id="emailError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" placeholder="Enter your Password">
+                        <span class="error" id="passwordError"></span>
+                    </div>
+                    <div class="signup">
+                        <button type="submit" id="signupButton">Sign Up</button>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
 
-
+    <script src="script.js"></script>
 </body>
 
 </html>

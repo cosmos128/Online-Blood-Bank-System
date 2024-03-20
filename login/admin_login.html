@@ -14,7 +14,7 @@
 
 <body>
 
-    <div class="maincontainer">
+    <!-- <div class="maincontainer">
         <div class="logo">
             <img src="image.png" height="150px" width="200px">
         </div>
@@ -30,46 +30,87 @@
                 <span id="passwordError" class="error"></span><br>
             
                 <input type="submit" value="Submit" id="submitButton">
+            </form>
+        </div> -->
+    <div class="maincontainer">
+        <div class="leftcontainer">
+            <img src="../assets/images/backgn.png">
         </div>
+        <div class="rightcontainer">
+            <div class="logo">
+                <img src="/assets/images/logo.png">
+            </div>
+            <div class="form">
+                <h1>Admin Login Portal</h1>
+                <!-- <form id="myForm">
+                        <span> <label for="username">Username</label></span><br>
+                         <span><input type="text" id="username" name="username" placeholder="Enter username"></span><br>
+                         <span id="usernameError" class="error"></span><br>
+                     
+                         <span><label for="password">Password</label></span><br>
+                         <input type="password" id="password" name="password" placeholder="Enter password"><br>
+                         <span id="passwordError" class="error"></span><br>
+                     
+                         <input type="submit" value="Submit" id="submitButton">
+                     </form> -->
+                <form id="myForm">
+                    <div class="form-group">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" placeholder="Enter your username">
+                        <span class="error" id="usernameError"></span>
+                    </div>
 
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" placeholder="Enter your Password">
+                        <span class="error" id="passwordError"></span>
+                    </div>
+                    <div class="submit">
+                        <button type="submit" id="submitButton">Submit</button>
+                    </div>
 
-        <script>
-            document.getElementById("myForm").addEventListener("submit", function(event) {
-                event.preventDefault(); // Prevents the default form submission behavior
-            
-                // Call your validation function here
-                validateForm();
-            });
-            function validateForm() {
-                var username = document.getElementById("username").value;
-                var password = document.getElementById("password").value;
-                var usernameError = document.getElementById("usernameError");
-                var passwordError = document.getElementById("passwordError");
-                var isValid = true;
+                </form>
+            </div>
+        </div>
+    </div>
 
-                // Reset error messages
-                usernameError.innerHTML = "";
-                passwordError.innerHTML = "";
+    <script>
+        document.getElementById("myForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevents the default form submission behavior
 
-                // Regular expressions for validation
-                var usernameRegex = /^[a-zA-Z0-9_-]{3,16}$/; // Alphanumeric, underscores, and hyphens allowed, 3-16 characters
-                var passwordRegex = /^.{6,}$/; // Minimum 6 characters
+            // Call your validation function here
+            validateForm();
+        });
+        function validateForm() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var usernameError = document.getElementById("usernameError");
+            var passwordError = document.getElementById("passwordError");
+            var isValid = true;
 
-                // Validation for username
-                if (!usernameRegex.test(username)) {
-                    usernameError.innerHTML = "Username must be alphanumeric and 3-16 characters long";
-                    isValid = false;
-                }
+            // Reset error messages
+            usernameError.innerHTML = "";
+            passwordError.innerHTML = "";
 
-                // Validation for password
-                if (!passwordRegex.test(password)) {
-                    passwordError.innerHTML = "Password must be at least 6 characters long";
-                    isValid = false;
-                }
+            // Regular expressions for validation
+            var usernameRegex = /^[a-zA-Z0-9_-]{3,16}$/; // Alphanumeric, underscores, and hyphens allowed, 3-16 characters
+            var passwordRegex = /^.{6,}$/; // Minimum 6 characters
 
-                return isValid;
+            // Validation for username
+            if (!usernameRegex.test(username)) {
+                usernameError.innerHTML = "Username must be alphanumeric and 3-16 characters long";
+                isValid = false;
             }
-        </script>
+
+            // Validation for password
+            if (!passwordRegex.test(password)) {
+                passwordError.innerHTML = "Password must be at least 6 characters long";
+                isValid = false;
+            }
+
+            return isValid;
+        }
+    </script>
 
 
 
