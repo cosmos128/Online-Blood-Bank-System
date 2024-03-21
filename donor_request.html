@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="donor_request.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+</head>
+<body>
+    <div class="main-container">
+        <div class="left">
+            <div class="leftImage">
+                <img src="./assets/image.png" alt="image">
+            </div>
+
+            <div class="text1">
+                Make a request form
+            </div>
+            <div class="text2">
+                &nbsp;&nbsp;&nbsp;It should only take a couple of 
+                <br>minutes to verify your edit request.
+            </div>
+        </div>
+
+        <div class="right">
+            <div class="logo">
+                <img src="./assets/logo.png" alt="logo">
+            </div>
+            
+            <div class="rightText">
+                Request to Edit Donor's info
+            </div>
+            <div class="form">
+                <form action="./donor_request.php" method="POST" onsubmit="return validateForm()">
+                    <label for="fullname">Fullname</label><br>
+                    <input type="text" id="fullname" name="fullname"><br>
+                    <div id="fullname-error" class="error"></div>
+
+                    <label for="mobileNumber">Mobile Number</label><br>
+                    <input type="tel" id="mobileNumber" name="mobileNumber"><br>
+                    <div id="mobileNumber-error" class="error"></div>
+
+                    <label for="address">Address</label><br>
+                    <input type="text" id="address" name="address"><br>
+                    <div id="address-error" class="error"></div>
+
+                    <label for="describe">Describe Request Change</label><br>
+                    <textarea name="describe" id="describe" cols="30" rows="10"></textarea><br>
+                    <div id="describe-error" class="error"></div>
+
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+    function validateForm() {
+        // Get references to the form inputs and error elements
+        var fullname = document.getElementById('fullname');
+        var fullnameError = document.getElementById('fullname-error');
+        var mobileNumber = document.getElementById('mobileNumber');
+        var mobileNumberError = document.getElementById('mobileNumber-error');
+        var address = document.getElementById('address');
+        var addressError = document.getElementById('address-error');
+        var describe = document.getElementById('describe');
+        var describeError = document.getElementById('describe-error');
+    
+        // Initialize error messages
+        fullnameError.textContent = '';
+        mobileNumberError.textContent = '';
+        addressError.textContent = '';
+        describeError.textContent = '';
+    
+        var isValid = true;
+    
+        // Check if fullname is empty
+        if (fullname.value.trim() === '') {
+            fullnameError.textContent = 'Please enter your fullname.';
+            isValid = false;
+        }
+    
+        // Check if mobileNumber is empty or not a number
+        if (mobileNumber.value.trim() === '' || isNaN(mobileNumber.value.trim())) {
+            mobileNumberError.textContent = 'Please enter a valid mobile number.';
+            isValid = false;
+        }
+    
+        // Check if address is empty
+        if (address.value.trim() === '') {
+            addressError.textContent = 'Please enter your address.';
+            isValid = false;
+        }
+    
+        // Check if describe is empty
+        if (describe.value.trim() === '') {
+            describeError.textContent = 'Please describe your request change.';
+            isValid = false;
+        }
+        // Check if mobileNumber is a valid phone number
+        var phonePattern = /^\d{10}$/;
+        if (!phonePattern.test(mobileNumber.value.trim())) {
+            mobileNumberError.textContent = 'Please enter a valid 10-digit mobile number.';
+            isValid = false;
+        }
+    
+        // If all validations pass, return true
+        return isValid;
+    }
+    </script>
+</body>
+</html>
