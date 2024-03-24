@@ -4,16 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
     <script src="form.js"></script>
   </head>
   <body>
     <div class="main-div">
-      <form action="./" class="form" onsubmit="validateForm(); return false;">
+      <form action="submit_form.php" class="form" method="post" onsubmit="validateForm(); return false;">
         <div class="heading">Need Blood</div>
         <div class="form-item">
           <label for="fullName" class="form-label"
@@ -33,8 +30,7 @@
 
         <div class="form-item">
           <label for="mobileNumber" class="form-label"
-            >Mobile Number <span style="color: red">*</span></label
-          >
+            >Mobile Number <span style="color: red">*</span></label>
           <input
             type="tel"
             class="form-input"
@@ -99,10 +95,10 @@
             <label for="bloodGroup" class="bloodGroup">Blood Group:</label>
             <select id="bloodType" name="bloodType" required>
               <option value="bloodGroup">Blood Group</option>
-              <option value="A+">A+</option>
-              <option value="B+">B+</option>
-              <option value="AB+">AB+</option>
-              <option value="O+">O+</option>
+              <option value="A">A+</option>
+              <option value="B">B+</option>
+              <option value="AB">AB+</option>
+              <option value="O">O+</option>
               <option value="A-">A-</option>
               <option value="B-">B-</option>
               <option value="AB-">AB-</option>
