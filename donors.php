@@ -37,7 +37,7 @@
                             <th>Blood group</th>
                             <th>Age</th>
                             <th>Gender</th>
-                            <th>Action</th>
+                            <th colspan='2'>Action</th>
                         </tr>
 
                 
@@ -58,6 +58,7 @@
                         <td><?php echo $row['Age'] ?></td>
                         <td><?php echo $row['Gender'] ?></td>
                         <td><a href="./donors.php?id=<?php echo $row['donor_id'];?>" onclick="clickme()"><b id="demo">DELETE</b></a><br></td>
+                        <td><a href="./edit_donors.php?id=<?php echo $row['donor_id'];?>"> <b id="demo">EDIT</b></a><br></td>
               <?php }
 
                 }
