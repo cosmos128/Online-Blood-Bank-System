@@ -1,0 +1,21 @@
+table,th,td{
+    border: 2px solid black;
+    border-collapse: collapse;
+    margin-top:4%;
+    margin-left: 14px;
+    text-align: center;
+    padding: 8px 8px 8px 8px;
+    font-size: large;
+}
+
+.main-container{
+    grid-area: main;
+    background-color: rgb(223, 221, 213);
+}
+
+#displayinfo{
+    font-weight: bold;
+    font-size:x-large;
+    padding-top: 20px;
+    padding-left: 40px;
+}
